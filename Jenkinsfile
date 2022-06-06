@@ -17,5 +17,15 @@ pipeline {
                 echo 'running'
             }
         }
+         stage('test report using jacoco') {
+            steps {
+                echo 'jacoco'
+            }
+        }
+        stage('building docker image') {
+            steps {
+                echo 'building docker image'
+            }
+        }
     }
 }
