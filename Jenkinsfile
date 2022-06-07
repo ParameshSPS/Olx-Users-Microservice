@@ -7,14 +7,24 @@ pipeline {
                git 'https://github.com/ParameshSPS/Olx-Users-Microservice.git' 
             }
         }
-        stage('compile') {
+//         stage('compile') {
+//             steps {
+//                 echo 'compiling'
+//             }
+//         }
+         stage('compile') {
             steps {
-                echo 'compiling'
+                bat 'mvn clean compile'
             }
         }
+//         stage('running') {
+//             steps {
+//                 echo 'running'
+//             }
+//         }
         stage('running') {
             steps {
-                echo 'running'
+                bat 'mvn package'
             }
         }
          stage('test report using jacoco') {
