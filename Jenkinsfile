@@ -27,9 +27,14 @@ pipeline {
                 bat 'mvn package'
             }
         }
-         stage('test report using jacoco') {
+//          stage('test report using jacoco') {
+//             steps {
+//                 echo 'jacoco'
+//             }
+//         }
+        stage('test report using jacoco') {
             steps {
-                echo 'jacoco'
+                jacoco()
             }
         }
         stage('building docker image') {
